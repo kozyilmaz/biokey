@@ -1,7 +1,8 @@
 # Cryptographic Key Generation from Biometric Data
 
-This repository builds necessary tools to create 'Secure Sketch's from biometric data both on Linux and macOS  
-All build tools (`autoconf, automake, libtool and pkgconfig`) and dependencies are compiled from scratch.  
+This repository builds standalone binaries to create 'Secure Sketch's from biometric data both on Linux and macOS  
+Binaries are implementation of algorithms from the paper [Fuzzy Extractors: How to Generate Strong Keys from Biometrics and Other Noisy Data](http://www.cs.bu.edu/~reyzin/papers/fuzzy.pdf) and vanilla code can be downloaded from [here](http://www.cs.bu.edu/~reyzin/code/fuzzy.html)  
+All build tools and dependencies are compiled from scratch.  
 
 
 ### Build instructions
