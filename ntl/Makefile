@@ -10,10 +10,13 @@ ntl_clone:
 	if [ ! -d "ntl-$(NTL_VERSION)" ]; then tar xvf ntl-$(NTL_VERSION).tar.gz; fi
 
 ntl_config:
-	( cd ntl-$(NTL_VERSION); CFLAGS="" CXXFLAGS="" ./configure --prefix=${BSPTOOLS} --enable-cxx --enable-static --disable-shared; )
+	( cd ntl-$(NTL_VERSION)/src; \
+		CFLAGS="" CXXFLAGS="" GMP_PREFIX=${BSPTOOLS} \
+		./configure DEF_PREFIX=${BSPTOOLS}; \
+	)
 
 ntl_build:
-	make -C ntl-$(NTL_VERSION) -j ${BSPJOB}
+	make -C ntl-$(NTL_VERSION)/src -j ${BSPJOB}
 
 ntl_install:
 	${BSPSUDO} make -C ntl-$(NTL_VERSION) install
