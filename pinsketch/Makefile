@@ -5,7 +5,7 @@ include ../Makefile.build
 
 pinsketch_clone:
 	if [ ! -f "pinsketch.zip" ]; then curl -OL https://www.cs.bu.edu/~reyzin/code/pinsketch.zip; fi;
-#	if [ ! -d "ntl-$(NTL_VERSION)" ]; then tar xvf ntl-$(NTL_VERSION).tar.gz; fi
+	if [ ! -d "pinsketch" ]; then unzip -d pinsketch pinsketch.zip; fi
 
 pinsketch_config:
 	$(call patchme,pinsketch)
@@ -14,13 +14,14 @@ pinsketch_build:
 	CFLAGS="" CXXFLAGS="" make -C pinsketch -j ${BSPJOB}
 
 pinsketch_install:
-	make -C ntl-$(NTL_VERSION)/src install
+	@true
 
 pinsketch_uninstall:
-	make -C ntl-$(NTL_VERSION)/src uninstall
+	@true
 
 pinsketch_clean:
-	make -C pinsketch clean
+	if [ -f "pinsketch/Makefile" ]; then make -C pinsketch clean; fi
 
 pinsketch_distclean:
-	@true
+	rm -rf pinsketch
+	rm -rf pinsketch.zip
