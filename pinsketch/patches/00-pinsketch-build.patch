@@ -1,7 +1,7 @@
-diff --git a/pinsketch/pinsketch/Makefile b/pinsketch/pinsketch/Makefile
+diff --git a/Makefile b/Makefile
 index 56ff90d..69c68c2 100644
---- a/pinsketch/pinsketch/Makefile
-+++ b/pinsketch/pinsketch/Makefile
+--- a/Makefile
++++ b/Makefile
 @@ -11,7 +11,7 @@
  # NTL creates these when you install it according to NTL instructions.
  # See http://www.shoup.net/ntl for more.
