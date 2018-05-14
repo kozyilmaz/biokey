@@ -1,0 +1,22 @@
+diff --git a/Makefile b/Makefile
+index d6fca93..73fb62e 100644
+--- a/Makefile
++++ b/Makefile
+@@ -11,7 +11,7 @@
+ # NTL creates these when you install it according to NTL instructions.
+ # See http://www.shoup.net/ntl for more.
+ 
+-CXXFLAGS = -Wno-deprecated
++CXXFLAGS += -g -O2 -std=c++11 -pthread -march=native -Wno-deprecated -I${BSPTOOLS}/include -L${BSPTOOLS}/lib
+ 
+ all: ijs
+ 
+@@ -25,7 +25,7 @@ WelchBerlekamp.o: WelchBerlekamp.cpp
+ 	g++ $(CXXFLAGS) -c WelchBerlekamp.cpp
+ 
+ ijs: ijs.o ijsio.o WelchBerlekamp.o
+-	g++ $(CXXFLAGS) ijs.o ijsio.o WelchBerlekamp.o -lntl -o ijs
++	g++ $(CXXFLAGS) ijs.o ijsio.o WelchBerlekamp.o -lntl -lgmp -o ijs
+ 
+ clean:
+ 	rm ijs ijs.o ijsio.o WelchBerlekamp.o
