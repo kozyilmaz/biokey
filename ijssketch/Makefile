@@ -14,10 +14,11 @@ ijssketch_build:
 	CFLAGS="" CXXFLAGS="" make -C ijssketch -j ${BSPJOB}
 
 ijssketch_install:
-	@true
+	mkdir -p ${BSPINSTALL}
+	if [ -f "ijssketch/ijs" ]; then cp ijssketch/ijs ${BSPINSTALL}/ijs; fi
 
 ijssketch_uninstall:
-	@true
+	rm -rf ${BSPINSTALL}/ijs
 
 ijssketch_clean:
 	if [ -f "ijssketch/Makefile" ]; then make -C ijssketch clean; fi
