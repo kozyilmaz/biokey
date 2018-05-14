@@ -8,7 +8,7 @@ ijssketch_clone:
 	if [ ! -d "ijssketch" ]; then unzip -d ijssketch ijssketch.zip; fi
 
 ijssketch_config:
-#	$(call patchme,ijssketch)
+	$(call patchme,ijssketch)
 
 ijssketch_build:
 	CFLAGS="" CXXFLAGS="" make -C ijssketch -j ${BSPJOB}
