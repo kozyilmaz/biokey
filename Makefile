@@ -6,9 +6,12 @@ endif
 subdir-y := tools
 subdir-y += gmp
 subdir-y += ntl
+subdir-y += pinsketch
+subdir-y += ijssketch
 
-ntl_depends-y = \
-	gmp
+ntl_depends-y = gmp
+pinsketch_depends-y = ntl
+ijssketch_depends-y = ntl
 
 include Makefile.lib
 
