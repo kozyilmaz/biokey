@@ -4,9 +4,8 @@ target_name ?= pinsketch
 include ../Makefile.build
 
 pinsketch_clone:
-#	code is the last version from the url below
-#	https://www.cs.bu.edu/~reyzin/code/fuzzy.html
-	@true
+	if [ ! -f "pinsketch.zip" ]; then curl -OL https://www.cs.bu.edu/~reyzin/code/pinsketch.zip; fi;
+#	if [ ! -d "ntl-$(NTL_VERSION)" ]; then tar xvf ntl-$(NTL_VERSION).tar.gz; fi
 
 pinsketch_config:
 	$(call patchme,pinsketch)
