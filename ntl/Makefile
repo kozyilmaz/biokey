@@ -11,7 +11,7 @@ ntl_clone:
 
 ntl_config:
 	( cd ntl-$(NTL_VERSION)/src; \
-		CFLAGS="" CXXFLAGS="" GMP_PREFIX=${BSPTOOLS} PREFIX=${BSPTOOLS} ./configure; \
+		CFLAGS="" CXXFLAGS="" ./configure DEF_PREFIX=${BSPTOOLS}; \
 	)
 
 ntl_build:
@@ -24,7 +24,7 @@ ntl_uninstall:
 	make -C ntl-$(NTL_VERSION)/src uninstall
 
 ntl_clean:
-	if [ -f "ntl-$(NTL_VERSION)/Makefile" ]; then make -C ntl-$(NTL_VERSION) distclean; fi
+	if [ -f "ntl-$(NTL_VERSION)/src/Makefile" ]; then make -C ntl-$(NTL_VERSION)/src distclean; fi
 
 ntl_distclean:
 	rm -rf ntl-$(NTL_VERSION)
