@@ -24,7 +24,7 @@ ntl_uninstall:
 	make -C ntl-$(NTL_VERSION)/src uninstall
 
 ntl_clean:
-	if [ -f "ntl-$(NTL_VERSION)/src/Makefile" ]; then make -C ntl-$(NTL_VERSION)/src distclean; fi
+	if [ -f "ntl-$(NTL_VERSION)/src/makefile" ]; then make -C ntl-$(NTL_VERSION)/src clean; fi
 
 ntl_distclean:
 	rm -rf ntl-$(NTL_VERSION)
