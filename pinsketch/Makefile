@@ -14,10 +14,13 @@ pinsketch_build:
 	CFLAGS="" CXXFLAGS="" make -C pinsketch -j ${BSPJOB}
 
 pinsketch_install:
-	@true
+	mkdir -p ${BSPINSTALL}
+	if [ -f "pinsketch/sketch" ]; then cp pinsketch/sketch ${BSPINSTALL}/sketch; fi
+	if [ -f "pinsketch/differ" ]; then cp pinsketch/differ ${BSPINSTALL}/differ; fi
 
 pinsketch_uninstall:
-	@true
+	rm -rf ${BSPINSTALL}/sketch
+	rm -rf ${BSPINSTALL}/differ
 
 pinsketch_clean:
 	if [ -f "pinsketch/Makefile" ]; then make -C pinsketch clean; fi
