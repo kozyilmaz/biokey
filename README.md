@@ -45,6 +45,13 @@ extracting features from 109_8.tif ...
 ```
 
 
+### Preliminary Secure Sketch implementation (biokey)
+```
+>> secure_sketch_test
+Secure Sketch Test Success
+```
+
+
 ### Creating the Secure Sketch (P) and Hash (R) Database from Minutiae Database (biokey)
 ```
 >> minutiae_to_secure_sketch
