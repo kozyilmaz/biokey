@@ -59,7 +59,7 @@ load('securesketches.mat');
         s = ss{i};
         x = xx{i};
         R = RR{i};
-        save('z.mat', 'minutiaedistances', 's', 'x', 'R');
+        %save('test.mat', 'minutiaedistances', 's', 'x', 'R');
     
         hit = 0;
         for j = 1:size(minutiaedistances,1)
@@ -75,7 +75,5 @@ load('securesketches.mat');
         str = ['10' num2str(fix((i-1)/8)+1) '_' num2str(mod(i-1,8)+1) '.tif (', num2str(hit), '/', num2str(k), ')'];
         disp(str);
     end
-   
-
 
 end
