@@ -2,7 +2,7 @@ clear all; clc; addpath(genpath(pwd));% addpath(.../fingerprintmatching);
 
 % extract features from fingerprint (minutiae) and create secure sketches
 % then create and compare hash values using stored secure sketches
-filename='101_3.tif';
+filename='101_1.tif';
 img = imread(filename);
 if ndims(img) == 3; img = rgb2gray(img); end  % Color Images
 disp(['Extracting features from ' filename ' ...']);
