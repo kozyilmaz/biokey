@@ -1,5 +1,10 @@
 # Cryptographic Key Generation from Biometric Data
 
+**biokey.zip does not contain the FVC2002 samples, please refer to the GitHub repository below where it contains everything**  
+```
+https://github.com/kozyilmaz/biokey
+```
+
 This repository tries to utilize Fuzzy Extractors for Fingerprint Matching and Biometric Key extraction 
 
 ### Implementation of Secure Sketch Reproduction
