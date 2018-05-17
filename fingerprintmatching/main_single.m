@@ -1,4 +1,4 @@
-clear all; clc; addpath(genpath(pwd));
+clear all; clc; addpath(genpath(pwd), '../fingerprintmatching');
 
 %% EXTRACT FEATURES FROM AN ARBITRARY FINGERPRINT
 filename='101_1.tif';
