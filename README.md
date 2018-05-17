@@ -13,6 +13,16 @@ Kang, Hyunho, Yohei Hori, Toshihiro Katashita, and Manabu Hagiwara
 In Proceedings of the 30th Symposium on Cryptography and Information Security, Kyoto, Japan, pp. 22-25. 2013. 
 [(article link)](https://pdfs.semanticscholar.org/1ef4/e8677073a0fd2882c92e8ff3edf91582ffc2.pdf) 
 
+Thai, Raymond 
+"Fingerprint Image Enhancement and Minutiae Extraction." 
+[(article link)](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.121.9756&rep=rep1&type=pdf) 
+
+Arakala, Arathi, Jason Jeffers, and Kathy J. Horadam 
+"Fuzzy extractors for minutiae-based fingerprint authentication." 
+In International Conference on Biometrics, pp. 760-769. Springer, Berlin, Heidelberg, 2007. 
+[(article link)](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.184.261&rep=rep1&type=pdf) 
+
+
 ### Used Projects
 - Simple Fingerprint Matching from Vahid K. Alilou [(link)](https://www.mathworks.com/matlabcentral/fileexchange/44369-fingerprint-matching--a-simple-approach)
 - PinSketch and Juels-Sudan Secure Sketch [(link)](http://www.cs.bu.edu/~reyzin/code/fuzzy.html)
@@ -33,3 +43,4 @@ extracting features from 109_8.tif ...
  >>> finding minutiae done.
  >>> filtering false minutiae done.
 ```
+

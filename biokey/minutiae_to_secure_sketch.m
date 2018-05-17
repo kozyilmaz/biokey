@@ -14,7 +14,17 @@ function [a, b, c] = minutiae_to_secure_sketch(d)
 % load extracted minutiae data from FVC2002 database
 load('db.mat');
 
+for i = 1:72
+    minutiae = ff{i};
+    
+    % m is the number of minutiae points
+    % n is the feature set (xcoor, ycoor, minutiae type, theta etc.)
+    [m,n] = size(minutiae);
 
+    % 1 is 'Ridge ending point'
+    save('data.mat', 'minutiae');
+
+end
 
 
 end
