@@ -9,7 +9,7 @@
 %   s: secure sketch
 %   R: hash result
 
-function [a, b, c] = minutiae_to_secure_sketch(d,b)
+function minutiae_to_secure_sketch(b)
 
 % sample size
 sample_size = 5;
@@ -18,7 +18,8 @@ ceiling = 0;
 % load extracted minutiae data from FVC2002 database
 load('db.mat');
 
-% traverse through extracted minutiae data
+% traverse through extracted minutiae data and calculate bifurcation point
+% distances
 for i = 1:size(ff,2)
     
     % minutiae data per finger 
@@ -61,10 +62,35 @@ for i = 1:size(ff,2)
         tmpv = vertcat(tmpv, tmph);
     end
     
+    % minimal 'sample_size' distance values per finger print 
     dd{i} = tmpv;
-    save('dist.mat', 'dd');
-    save('data.mat', 'minutiae', 'i', 'j', 'k', 'bifurcation', 'ridgeending', 'euclidian', 'dist', 'ceiling', 'tmph', 'tmpv');
+
+    %save('data.mat', 'minutiae', 'i', 'j', 'k', 'bifurcation', 'ridgeending', 'euclidian', 'dist', 'ceiling', 'tmph', 'tmpv');
 end
 
+% calculate secure sketch data for distance sets
+for i = 1:size(dd,2)
+    % minutiae distances per bifurcation point 
+    minutiaedistances = dd{i};
+    
+    s = [];
+    x = [];
+    R = [];
+    for j = 1:size(minutiaedistances,1)
+        % create a secure sketch, randomness and hash for every
+        % bifurcation distance set
+        [tmps, tmpx, tmpR] = secure_sketch_generate(minutiaedistances(j,:),50);
+        s = vertcat(s, tmps);
+        x = vertcat(x, tmpx);
+        R = vertcat(R, tmpR);
+    end
+    % finally secure sketch set for comparison database is created
+    % this is a randomized secure set so even compromised it cant be
+    % used directly
+    ss{i} = s;
+    xx{i} = x;
+    RR{i} = R;
+    save('securesketches.mat', 'dd', 'ss', 'xx', 'RR');
+end
 
 end
