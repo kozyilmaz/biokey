@@ -56,7 +56,7 @@ for i = 1:size(ff,2)
             tmph = horzcat(tmph, de2bi(dist(j,k),16));
         end
         % padding with zeros
-        tmph = horzcat(tmph, zeros(1, b - (sample_size * 16)))
+        tmph = horzcat(tmph, zeros(1, b - (sample_size * 16)));
         % create distance values per bifurcation point
         tmpv = vertcat(tmpv, tmph);
     end
