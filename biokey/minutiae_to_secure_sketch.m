@@ -9,9 +9,10 @@
 %   s: secure sketch
 %   R: hash result
 
-function minutiae_to_secure_sketch(b)
+function minutiae_to_secure_sketch()
 
-% sample size
+% Secure Sketch bit size and distance sample size
+bit_size = 127;
 sample_size = 5;
 ceiling = 0;
 
@@ -57,7 +58,7 @@ for i = 1:size(ff,2)
             tmph = horzcat(tmph, de2bi(dist(j,k),16));
         end
         % padding with zeros
-        tmph = horzcat(tmph, zeros(1, b - (sample_size * 16)));
+        tmph = horzcat(tmph, zeros(1, bit_size - (sample_size * 16)));
         % create distance values per bifurcation point
         tmpv = vertcat(tmpv, tmph);
     end
