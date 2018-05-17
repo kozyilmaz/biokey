@@ -38,3 +38,15 @@ out/ijs:
     /usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 400.9.0)
     /usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1252.50.4)
 ```
+
+### Usage
+Following command will produce A.ss (note that file must end in .set)
+```shell
+$ ./sketch A.set
+```
+
+Following commands will output the symmetric difference between A and B if it has at most t
+```shell
+$ ./differ A.ss B.set
+$ ./differ A.ss B.ss
+```
