@@ -1,4 +1,4 @@
-clear all; clc; addpath(genpath(pwd));% addpath(.../fingerprintmatching);
+clear all; clc; addpath(genpath(pwd),'../fingerprintmatching');
 
 % extract features from fingerprint (minutiae) and create secure sketches
 % then create and compare hash values using stored secure sketches

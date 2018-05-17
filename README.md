@@ -44,3 +44,8 @@ extracting features from 109_8.tif ...
  >>> filtering false minutiae done.
 ```
 
+### Creating the Secure Sketch (P) and Hash (R) values from Minutiae Database (biokey)
+```
+>> minutiae_to_secure_sketch
+```
+
